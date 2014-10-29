@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Twitterdashboard PG 12</title>
+<link rel="stylesheet" href="/style/layout.css"/>
+<link rel="stylesheet" href="/style/theme.css"/>
+<script src="/lib/jquery-2.1.1.min.js"></script>
+<script src="/lib/jquery.flot.min.js"></script>
+<script src="/lib/core.js"></script>
+<script src="/lib/charts.js"></script>
+<script src="/lib/log.js"></script>
+<script src="lib/tweets.js"></script>
+</head>
+<body class="container_12">
+
+<div id="tweet_div" class="grid_8 vert_8"></div>
+<div class="content"></div>
+
+<script>
+
+block('#tweet_div').tweets({
+	memory: 8
+})
+
+// connect sample event to graph
+events.connect('tweet', '#tweet_div');
+</script>
+</body>
+</html>
