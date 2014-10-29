@@ -19,11 +19,15 @@ def setup(ctx, e):
     ctx.count = 0
     fire('tweet', start_offline_tweets('data/bata_2014.txt', time_factor=100000))
 	
-stopwords = ['hup']
+stopwords = ['hup', 'succes', 'kom op']
 @event('tweet')
 def echo(c,e):
 	tweet = e.data
-	emit ('tweet', tweet)
-
+	try:
+		for word in stopwords:
+			if word in tweet['text']:
+				emit ('tweet', tweet)
+	except TypeError:
+		pass
 
 	
