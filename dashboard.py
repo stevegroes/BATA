@@ -19,12 +19,10 @@ def setup(ctx, e):
     ctx.count = 0
     fire('tweet', start_offline_tweets('data/bata_2014.txt', time_factor=100000))
 	
-stopwords = ['hup']
+stopwords = ['hup', 'in']
 @event('tweet')
 def echo(c,e):
 	tweet = e.data
-	result = []
-	result = filter(lambda w: w in stopwords, result)
 	emit ('tweet', tweet)
 
 
