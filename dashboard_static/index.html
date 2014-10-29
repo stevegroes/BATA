@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="/style/template.css">
 <script src="/lib/jquery-2.1.1.min.js"></script>
 <script src="/lib/jquery.flot.min.js"></script>
+<script src="/lib/jquery.flot.categories.min.js"></script>
+<script src="/lib/jquery.flot.pie.js"></script>
 <script src="/lib/core.js"></script>
 <script src="/lib/charts.js"></script>
 <script src="/lib/log.js"></script>
@@ -55,7 +57,9 @@
 </div>
 </div>
 <div class="blok100">
-<div id="finish_foto">
+<div id="taartkaart">
+<h3>Taal van de Twitteraars</h3>
+<div id="taart"></div>
 </div>
 </div>
 </div>
@@ -68,6 +72,22 @@ block('#tweet_div').tweets({
 
 // connect sample event to graph
 events.connect('tweet', '#tweet_div');
+block('#taart').piechart({
+    filter_function: function(cat, val, max) { return true },
+    options: {
+        series: {
+        pie: {
+            show: true,
+            
+        }
+    },
+    legend: {
+        show: false
+    }
+    }
+});
+events.connect('taart', '#taart');
+
 </script>
 </body>
 </html>

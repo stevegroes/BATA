@@ -110,6 +110,11 @@ h1 {
 	border-radius: 2px;
 }
 
+#taart {
+	height: 160px;
+	padding-top: 5px;
+}
+
 #ongelukken {
 	height: 180px;
 	margin: 5px;
@@ -119,11 +124,17 @@ h1 {
 	border-radius: 2px;
 }
 
-#finish_foto {
+#taartkaart {
 	height: 180px;
 	margin: 5px;
 	background-color: #008299;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+}
+
+#taartkaart h3{
+	color: #fff;
+	margin: 0;
+    text-align: center;
 }

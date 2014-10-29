@@ -29,3 +29,27 @@ def echo(c,e):
 				emit ('tweet', tweet)
 	except TypeError:
 		pass
+		
+	try:
+		if 'en' in tweet['lang']:
+			emit('taart', {
+            	'action': 'add',
+				'value': ('en', 1)
+			})
+		if 'nl' in tweet['lang']:
+			emit('taart', {
+            	'action': 'add',
+				'value': ('nl', 1)
+			})
+		if 'de' in tweet['lang']:
+			emit('taart', {
+            	'action': 'add',
+				'value': ('de', 1)
+			})
+		if 'es' in tweet['lang']:
+			emit('taart', {
+        	   	'action': 'add',
+				'value': ('es', 1)
+			})
+	except TypeError:
+		pass
