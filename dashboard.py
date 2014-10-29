@@ -19,7 +19,7 @@ def setup(ctx, e):
     ctx.count = 0
     fire('tweet', start_offline_tweets('data/bata_2014.txt', time_factor=100000))
 	
-stopwords = ['hup', 'succes', 'kom op']
+stopwords = ['hup', 'succes', 'kom op', 'plezier']
 @event('tweet')
 def echo(c,e):
 	tweet = e.data
@@ -29,5 +29,3 @@ def echo(c,e):
 				emit ('tweet', tweet)
 	except TypeError:
 		pass
-
-	
