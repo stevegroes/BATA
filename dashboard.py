@@ -54,11 +54,13 @@ def echo(c,e):
 			})
 	except TypeError:
 		pass
-	try:
-		for m in zoekfunctie:
-			if m in tweet['text']:
-				emit ('tweetlist', tweet)
-	if zoekfunctie == []:
-		emit ('tweetlist', tweet)
-	except TypeError:
-		pass
+		
+	emit ('tweetlist', tweet)
+	#try:
+	#	for m in zoekfunctie:
+	#		if m in tweet['text']:
+	#			emit ('tweetlist', tweet)
+	#if not zoekfunctie:
+	#	emit ('tweetlist', tweet)
+	#except TypeError:
+	#	pass
