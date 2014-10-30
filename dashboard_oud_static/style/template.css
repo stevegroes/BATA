@@ -110,25 +110,6 @@ h1 {
 	border-radius: 2px;
 }
 
-#mededelingen .tweet-list li.stream-item {
-    height: 90px;
-    line-height: inherit;
-}
-
-#mededelingen .tweet-list .tweet p{
-	font-size: 12px;
-	line-height: 15px;
-    word-break: break-all;
-}
-
-#mededelingen .tweet-list a {
-	color: #00520b;
-}
-
-#mededelingen .tweet-list .stream-item:hover {
-    background-color: #00b824;
-}
-
 #taart {
 	height: 160px;
 	padding-top: 5px;

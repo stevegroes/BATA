@@ -20,7 +20,6 @@ def setup(ctx, e):
     fire('tweet', start_offline_tweets('data/bata_2014.txt', time_factor=100000))
 	
 stopwords = ['hup', 'succes', 'kom op', 'plezier']
-zoekfunctie = []
 @event('tweet')
 def echo(c,e):
 	tweet = e.data
@@ -52,13 +51,5 @@ def echo(c,e):
         	   	'action': 'add',
 				'value': ('es', 1)
 			})
-	except TypeError:
-		pass
-	try:
-		for m in zoekfunctie:
-			if m in tweet['text']:
-				emit ('tweetlist', tweet)
-	if zoekfunctie == []:
-		emit ('tweetlist', tweet)
 	except TypeError:
 		pass
