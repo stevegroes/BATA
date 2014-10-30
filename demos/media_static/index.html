@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Neca Test</title>
+<script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script>
+(function($, block) {
+
+block.fn.shout = function(config) {
+    // handle configuration
+    var options = $.extend({
+        size: '64pt',
+        text: 'RED',
+        color: 'red'
+    }, config);
+
+    // create HTML representation
+    var $el = $('<span></span>').appendTo(this.$element);
+    $el.css('font-size', options.size);
+
+    // create HTML element for display
+    var data = {
+        text: options.text,
+        color: options.color
+    }
+
+    // update function to update element
+    var update = function() {
+        $el.text(data.text+'!').css('color', data.color);
+    }
+
+    // invoke update to initialise the display
+    update();
+
+    // register actions
+    this.actions({
+        word: function(e, message) {
+            data.text = message.text;
+            update();
+        },
+        color: function(e, message) {
+            data.color = message.color;
+            update();
+        }
+    });
+
+    // return the element for further work
+    return this.$element;
+}
+
+})(jQuery, block);
+</script>
+<script src="/lib/jquery-2.1.1.min.js"></script>
+<script src="/lib/jquery.flot.min.js"></script>
+<script src="/lib/core.js"></script>
+<script src="/lib/charts.js"></script>
+<script src="/lib/log.js"></script>
+<script src="/lib/tweets.js"></script>
+</head>
+<body class="container_12">
+
+	<h2>Hallo</h2>
+
+	<div class="grid_4 vert_4">
+	
+		<div id="tweet_div"></div>
+	
+	</div>
+
+<script>
+
+block('#tweet_div').shout({
+});
+
+// connect sample event to graph
+events.connect('tweet', '#tweet_div');
+</script>
+</body>
+</html>
