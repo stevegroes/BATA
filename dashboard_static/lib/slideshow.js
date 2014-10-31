@@ -66,13 +66,14 @@ var process_entities = function(message, entities) {
     return result;
 }
 
-block.fn.tweets = function(config) {
+block.fn.slideshow = function(config) {
     var options = $.extend({
         memory: 20
     }, config);
 
     // create the necessary HTML in the block container
     this.$element.append('<ol class="tweet-list stream-items"></ol>');
+    alert('lijst');
 
     // store list for later
     var $list = this.$element.find('ol');
@@ -80,27 +81,20 @@ block.fn.tweets = function(config) {
 
     // register default handler for handling tweet data
     this.actions(function(e, tweet){
-        var $item = $('<li class="stream-item"></li>');
+        var $item = $('<li class="stream-item"></li>');        
+        var foto_url = tweet.entities.media[0].media_url_https;
 
         var $tweet = $('<div class="tweet"></div>');
         var $content = $('<div class="content"></div>');
         var $header = $('<div class="stream-item-header"></div>');
-        
-        //alert(tweet[''][]);
 
         // Build a tag image and header:
         var $account = $('<a class="account-group"></a>');
-        $account.attr("href", "http://twitter.com/" + tweet.user.screen_name);
-
-        
-        $account.append($('<span class="username"><s>@</s><b>' + tweet.user.screen_name + '</b></span>'));
-        $header.append($account);
-
-        $content.append($header);
+        $account.attr("href", "http://twitter.com/" + tweet.entities);
 
         // Build contents:
         var text = process_entities(tweet.text, tweet.entities);
-        var $text = $('<p class="tweet-text">' + text + '</p>');
+        var $text = $('<img src='+foto_url + ' class="tweet_foto" width="150px" max-height="170px">');
         $content.append($text);
 
         // Build outer structure of containing divs:
@@ -114,6 +108,7 @@ block.fn.tweets = function(config) {
         if ($list.children().size() > options.memory) {
             $list.children().last().remove();
         }
+        
     });
 
     return this.$element;

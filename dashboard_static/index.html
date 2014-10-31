@@ -14,6 +14,7 @@
 <script src="/lib/charts.js"></script>
 <script src="/lib/log.js"></script>
 <script src="/lib/tweets.js"></script>
+<script src="/lib/slideshow.js"></script>
 </head>
 <body class="container_12">
 <h1>Twitter Dashboard</h1>
@@ -55,7 +56,8 @@
 </div>
 </div>
 <div class="blok100">
-<div id="ongelukken">
+<div id="slideshow_kaart">
+    <div id="slideshow"></div>
 </div>
 </div>
 <div class="blok100">
@@ -76,6 +78,10 @@ block('#tweetlist_div').tweets({
 	memory: 2
 })
 
+block('#slideshow').slideshow({
+    memory: 1
+})
+
 events.connect('tweet', '#tweet_div');
 events.connect('tweetlist', '#tweetlist_div');
 block('#taart').piechart({
@@ -93,7 +99,7 @@ block('#taart').piechart({
     }
 });
 events.connect('taart', '#taart');
-
+events.connect('tweetlist', '#slideshow');
 </script>
 </body>
 </html>
