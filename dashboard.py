@@ -17,7 +17,7 @@ import re
 @event('init')
 def setup(ctx, e):
     ctx.count = 0
-    fire('tweet', start_offline_tweets('data/bata_2014.txt', time_factor=100000))
+    start_offline_tweets('data/bata_2014.txt', time_factor=100000)
 	
 stopwords = ['hup', 'succes', 'kom op', 'plezier']
 zoekfunctie = []
@@ -56,6 +56,8 @@ def echo(c,e):
 		pass
 		
 	emit ('tweetlist', tweet)
+	
+	
 	#try:
 	#	for m in zoekfunctie:
 	#		if m in tweet['text']:
