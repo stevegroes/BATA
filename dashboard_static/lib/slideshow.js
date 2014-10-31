@@ -73,7 +73,6 @@ block.fn.slideshow = function(config) {
 
     // create the necessary HTML in the block container
     this.$element.append('<ol class="tweet-list stream-items"></ol>');
-    alert('lijst');
 
     // store list for later
     var $list = this.$element.find('ol');
@@ -94,7 +93,7 @@ block.fn.slideshow = function(config) {
 
         // Build contents:
         var text = process_entities(tweet.text, tweet.entities);
-        var $text = $('<img src='+foto_url + ' class="tweet_foto" width="150px" max-height="170px">');
+        var $text = $('<img src='+foto_url + ' class="tweet_foto">');
         $content.append($text);
 
         // Build outer structure of containing divs:

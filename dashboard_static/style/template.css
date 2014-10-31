@@ -149,6 +149,31 @@ h1 {
 
 }
 
+#slideshow .tweet-list .tweet {
+	padding: 0px;
+}
+
+#slideshow img {
+	max-height: 170px;
+	margin-left: auto;
+	max-width: 270px;
+	margin-top: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+}
+
+#slideshow .tweet-list .stream-item:hover {
+    background-color: #0A5BC4;
+}
+
+#slideshow .tweet-list li.stream-item {
+    height: 180px;
+    line-height: inherit;
+}
+
+
 #taartkaart {
 	height: 180px;
 	margin: 5px;
