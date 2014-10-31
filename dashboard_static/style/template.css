@@ -67,10 +67,14 @@ h1 {
 #weer {
 	height: 160px;
 	margin: 5px;
-	background-color: #A700AE;
+	background-color: #fff;/*#A700AE*/
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+}
+
+#weer iframe {
+	margin-left: 5px
 }
 
 #aanmoedigingen {
